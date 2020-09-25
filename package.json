@@ -1,0 +1,30 @@
+{
+  "name": "discord-webhooks",
+  "version": "1.0.0",
+  "description": "Module for sending Discord webhooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gideonbot/discord-webhooks.git"
+  },
+  "keywords": [
+    "Discord",
+    "Webhooks"
+  ],
+  "author": "MBR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gideonbot/discord-webhooks/issues"
+  },
+  "homepage": "https://github.com/gideonbot/discord-webhooks#readme",
+  "devDependencies": {
+    "eslint": "^7.9.0"
+  },
+  "dependencies": {
+    "form-data": "^3.0.0",
+    "make-fetch-happen": "^8.0.9"
+  }
+}
