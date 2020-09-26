@@ -12,7 +12,7 @@ let webhook = new Webhook('your webhook id', 'your webhook token');
 
 webhook.send('this is a test');
 webhook.send(null, {embeds: [{title: 'embed title'}]}).then(sent => console.log(sent.id));
-webhook.get().then(data => console.log(data)) //gives you info about the webhook
+webhook.get().then(data => console.log(data)); //gives you info about the webhook
 ```
 
 ## API

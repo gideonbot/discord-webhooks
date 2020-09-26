@@ -28,7 +28,14 @@ class Webhook {
      * @param {{content: string, username?: string, avatar?: string, embeds?: [], mentions: {}}} options 
      */
     async send(content, options = {}) {
-        if (!content || (typeof(content) != 'string' && !(content instanceof form_data))) throw new Error('Invalid content');
+        if (content == undefined && options == undefined) throw new Error('Invalid args');
+
+        if (Util.IsObject(content)) {
+            options = content;
+            content = null;
+        }
+
+        if (content && typeof(content) != 'string' && !(content instanceof form_data)) throw new Error('Invalid content');
 
         if (!options) options = {};
 
@@ -42,16 +49,16 @@ class Webhook {
             throw new Error('options.embeds needs to be an array');
         }
 
-        let body = typeof(content) == 'string' ? JSON.stringify({
+        let body = !(content instanceof form_data) ? JSON.stringify({
             content,
             username: options.username ? String(options.username) : undefined,
             avatar_url: options.avatar,
             tts: 'tts' in options ? Boolean(options.tts) : undefined,
             embeds: options.embeds,
             allowed_mentions: options.mentions
-        }) : body;
+        }) : content;
 
-        let content_type = typeof(content) == 'string' ? 'application/json' : 'multipart/form-data';
+        let content_type = !(content instanceof form_data) ? 'application/json' : 'multipart/form-data';
 
         let headers = {
             'Content-Type': content_type,
