@@ -1,9 +1,9 @@
 import FormData from 'form-data';
 
-export class Webhook {
+class Webhook {
     constructor(id: string, token: string);
     get(): Promise<WebhookInfo>;
-    send(content: string | FormData, options?: SendOptions): Promise<Message>;
+    send(content: string | FormData | SendOptions, options?: SendOptions): Promise<Message>;
 }
 
 interface SendOptions {
@@ -85,3 +85,5 @@ interface User {
     avatar?: string;
     bot?: boolean;
 }
+
+export = Webhook;
