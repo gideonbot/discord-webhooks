@@ -110,7 +110,7 @@ class Util {
             if (!(method == 'POST' || method == 'GET' || method == 'PUT' || method == 'PATCH' || method == 'DELETE')) return reject('Invalid method');
 
             let data = {};
-            data.headers = {'User-Agent': 'discord-webhooks (https://github.com/gideonbot/request-controller, 1.0.0)'};
+            data.headers = {'User-Agent': 'discord-webhooks (https://github.com/gideonbot/request-controller, 1.0.1)'};
             data.method = method;
             
             if (body) data.body = body;
