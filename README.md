@@ -1,5 +1,5 @@
 # discord-webhooks
-A npm module for creating discord webhooks
+A npm module for sending discord webhooks
 
 
 ## Installation
